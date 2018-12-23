@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">FTC Rover Ruckus Scorer</string>
+    <string name="Hello_world">Hello world! Welcome to my app</string>
+    <string name="action_settings">Settings</string>
+    <string name="autonomous">Autonomous</string>
+    <string name="Team_1">Team 1</string>
+    <string name="Team_2">Team 2</string>
+    <string name="EndGameInput1">Latched onto the Lander</string>
+    <string name="EndGameInput2">Completely Parked in Crater</string>
+    <string name="EndGameInput3">Partially Parked in Crater</string>
+    <string name="EndGameInput4">Neither</string>
+    <string name="EnterRobotEndGamePosition">Enter Robot End Game Position</string>
+    <string name="Enter">Enter</string>
+    <string name="endgame">End Game</string>
+    <string name="teleop">Tele-Op</string>
+    <string name="Scores">Scores</string>
+    <string name="NewMatch">New Match</string>
+</resources>
