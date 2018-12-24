@@ -5,11 +5,11 @@
     <string name="autonomous">Autonomous</string>
     <string name="Team_1">Team 1</string>
     <string name="Team_2">Team 2</string>
-    <string name="EndGameInput1">Latched onto the Lander</string>
-    <string name="EndGameInput2">Completely Parked in Crater</string>
-    <string name="EndGameInput3">Partially Parked in Crater</string>
-    <string name="EndGameInput4">Neither</string>
-    <string name="EnterRobotEndGamePosition">Enter Robot End Game Position</string>
+    <string name="EndGameInput1">Neither</string>
+    <string name="EndGameInput2">Latched onto the Lander</string>
+    <string name="EndGameInput3">Completely Parked in Crater</string>
+    <string name="EndGameInput4">Partially Parked in Crater</string>
+    <string name="EndGamePos">End Game Position:</string>
     <string name="Enter">Enter</string>
     <string name="endgame">End Game</string>
     <string name="teleop">Tele-Op</string>

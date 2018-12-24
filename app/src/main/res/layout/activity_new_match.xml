@@ -9,27 +9,8 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/Points"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:background="@color/Blue"
-            android:padding="15dp"
-            android:text="@string/Points"
-            android:textColor="@android:color/white"
-            android:textSize="40dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true">
 
         <TextView
             android:id="@+id/AllianceColor"
@@ -47,15 +28,46 @@
             app:layout_constraintTop_toTopOf="@+id/Points"
             app:layout_constraintVertical_bias="0.0" />
 
-        <CheckBox
-            android:id="@+id/RS1"
+        <Switch
+            android:id="@+id/AllianceColorSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="@color/Black"
-            app:layout_constraintBottom_toBottomOf="@+id/RobotSampled"
-            app:layout_constraintEnd_toEndOf="@+id/Team1"
-            app:layout_constraintStart_toStartOf="@+id/Team1"
-            app:layout_constraintTop_toTopOf="@+id/RobotSampled" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="left"
+            android:padding="10dp"
+            android:switchMinWidth="80dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:theme="@style/SwitchCompatTheme"
+            app:layout_constraintEnd_toStartOf="@+id/Points"
+            app:layout_constraintStart_toStartOf="@+id/AllianceColor"
+            app:layout_constraintTop_toBottomOf="@+id/AllianceColor" />
+
+        <TextView
+            android:id="@+id/Points"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="140dp"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="140dp"
+            android:layout_marginRight="140dp"
+            android:background="@color/Blue"
+            android:padding="15dp"
+            android:text="0"
+            android:textColor="@android:color/white"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/Team1"
@@ -69,35 +81,53 @@
             android:ems="10"
             android:gravity="center"
             android:hint="@string/Team_1"
+            android:textColorHint="@color/Black"
             android:inputType="number"
             app:layout_constraintEnd_toStartOf="@+id/Team2"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/RobotLanded"
-            android:layout_width="match_parent"
+        <EditText
+            android:id="@+id/Team2"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:text="Robot Landed:"
-            android:textColor="@android:color/white"
-            android:textSize="20dp"
+            android:layout_below="@+id/Points"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_toLeftOf="@+id/Team1"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/Team_2"
+            android:textColorHint="@color/Black"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TableRow
+            android:id="@+id/trAutonomous1"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="180dp"
+            android:background="@color/Black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Autonomous" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/TeamMarker"
+            android:id="@+id/Autonomous"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:text="Team Marker Claimed:"
+            android:layout_height="40dp"
+            android:background="@color/Orange"
+            android:gravity="center_horizontal"
+            android:text="@string/autonomous"
             android:textColor="@android:color/white"
-            android:textSize="20dp"
+            android:textSize="28dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/trRobotSampled" />
+            app:layout_constraintTop_toBottomOf="@+id/trAutonomous1" />
 
         <TableRow
             android:id="@+id/trAutonomous2"
@@ -110,16 +140,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TableRow
-            android:id="@+id/trRobotLanded"
-            android:layout_width="0dp"
-            android:layout_height="2dp"
-            android:layout_marginTop="265dp"
-            android:background="@color/Black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+        <TextView
+            android:id="@+id/RobotLanded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Robot Landed:"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/Autonomous" />
 
         <CheckBox
             android:id="@+id/RL1"
@@ -142,6 +174,50 @@
             app:layout_constraintTop_toTopOf="@+id/RobotLanded" />
 
         <TableRow
+            android:id="@+id/trRobotLanded"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="265dp"
+            android:background="@color/Black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/RobotSampled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Robot Sampled:"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/trRobotLanded" />
+
+        <CheckBox
+            android:id="@+id/RS1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/Black"
+            app:layout_constraintBottom_toBottomOf="@+id/RobotSampled"
+            app:layout_constraintEnd_toEndOf="@+id/Team1"
+            app:layout_constraintStart_toStartOf="@+id/Team1"
+            app:layout_constraintTop_toTopOf="@+id/RobotSampled" />
+
+        <CheckBox
+            android:id="@+id/RS2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/Black"
+            app:layout_constraintBottom_toBottomOf="@+id/RobotSampled"
+            app:layout_constraintEnd_toEndOf="@+id/Team2"
+            app:layout_constraintStart_toStartOf="@+id/Team2"
+            app:layout_constraintTop_toTopOf="@+id/RobotSampled" />
+
+        <TableRow
             android:id="@+id/trRobotSampled"
             android:layout_width="0dp"
             android:layout_height="2dp"
@@ -153,17 +229,37 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/RobotSampled"
-            android:layout_width="match_parent"
+            android:id="@+id/TeamMarker"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
-            android:text="Robot Sampled:"
+            android:text="Team Marker Claimed:"
             android:textColor="@android:color/white"
             android:textSize="20dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/trRobotLanded" />
+            app:layout_constraintTop_toBottomOf="@+id/trRobotSampled" />
+
+        <CheckBox
+            android:id="@+id/TM2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/Black"
+            app:layout_constraintBottom_toBottomOf="@+id/TeamMarker"
+            app:layout_constraintEnd_toEndOf="@+id/Team2"
+            app:layout_constraintStart_toStartOf="@+id/Team2"
+            app:layout_constraintTop_toTopOf="@+id/TeamMarker" />
+
+        <CheckBox
+            android:id="@+id/TM1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/Black"
+            app:layout_constraintBottom_toBottomOf="@+id/TeamMarker"
+            app:layout_constraintEnd_toEndOf="@+id/Team1"
+            app:layout_constraintStart_toStartOf="@+id/Team1"
+            app:layout_constraintTop_toTopOf="@+id/TeamMarker" />
 
         <TableRow
             android:id="@+id/trTeamMarker"
@@ -176,98 +272,257 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/RobotParked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Robot Parked in Crater:"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/trTeamMarker" />
+
         <CheckBox
-            android:id="@+id/TM2"
+            android:id="@+id/RPC1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:buttonTint="@color/Black"
-            app:layout_constraintBottom_toBottomOf="@+id/TeamMarker"
+            app:layout_constraintBottom_toBottomOf="@+id/RobotParked"
             app:layout_constraintEnd_toEndOf="@+id/Team2"
             app:layout_constraintStart_toStartOf="@+id/Team2"
-            app:layout_constraintTop_toTopOf="@+id/TeamMarker" />
+            app:layout_constraintTop_toTopOf="@+id/RobotParked" />
 
-        <TextView
-            android:id="@+id/Autonomous"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/Orange"
-            android:gravity="center_horizontal"
-            android:text="@string/autonomous"
-            android:textColor="@android:color/white"
-            android:textSize="28dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/trAutonomous1" />
-
-        <Switch
-            android:id="@+id/AllianceColorSwitch"
+        <CheckBox
+            android:id="@+id/RPC2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:gravity="left"
-            android:onClick="Alliance_Color"
-            android:padding="10dp"
-            android:switchMinWidth="80dp"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:theme="@style/SwitchCompatTheme"
-            app:layout_constraintEnd_toStartOf="@+id/Points"
-            app:layout_constraintStart_toStartOf="@+id/AllianceColor"
-            app:layout_constraintTop_toBottomOf="@+id/AllianceColor" />
+            android:buttonTint="@color/Black"
+            app:layout_constraintBottom_toBottomOf="@+id/RobotParked"
+            app:layout_constraintEnd_toEndOf="@+id/Team1"
+            app:layout_constraintStart_toStartOf="@+id/Team1"
+            app:layout_constraintTop_toTopOf="@+id/RobotParked" />
 
         <TableRow
-            android:id="@+id/trAutonomous1"
+            android:id="@+id/trRPC"
             android:layout_width="0dp"
             android:layout_height="2dp"
-            android:layout_marginTop="180dp"
+            android:layout_marginTop="400dp"
             android:background="@color/Black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/TeleOp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/Orange"
+            android:gravity="center_horizontal"
+            android:text="@string/teleop"
+            android:textColor="@android:color/white"
+            android:textSize="28dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/trRPC" />
+
+        <TableRow
+            android:id="@+id/trTeleOp"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="440dp"
+            android:background="@color/Black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/MininDepot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Minerals in Depot:"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/trTeleOp" />
+
         <EditText
-            android:id="@+id/Team2"
+            android:id="@+id/MininDepot1"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/Points"
-            android:layout_marginTop="120dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_toLeftOf="@+id/Team1"
+            android:layout_toRightOf="@+id/Points"
             android:ems="10"
             android:gravity="center"
-            android:hint="@string/Team_2"
+            android:hint="@string/Enter"
+            android:textColorHint="@color/Black"
             android:inputType="number"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <CheckBox
-            android:id="@+id/RS2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:buttonTint="@color/Black"
-            app:layout_constraintBottom_toBottomOf="@+id/RobotSampled"
-            app:layout_constraintEnd_toEndOf="@+id/Team2"
-            app:layout_constraintStart_toStartOf="@+id/Team2"
-            app:layout_constraintTop_toTopOf="@+id/RobotSampled" />
-
-        <CheckBox
-            android:id="@+id/TM1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:buttonTint="@color/Black"
-            app:layout_constraintBottom_toBottomOf="@+id/TeamMarker"
+            app:layout_constraintBottom_toBottomOf="@+id/MininDepot"
             app:layout_constraintEnd_toEndOf="@+id/Team1"
             app:layout_constraintStart_toStartOf="@+id/Team1"
-            app:layout_constraintTop_toTopOf="@+id/TeamMarker" />
+            app:layout_constraintTop_toTopOf="@+id/MininDepot" />
+
+        <EditText
+            android:id="@+id/MininDepot2"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Points"
+            android:layout_toRightOf="@+id/Points"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/Enter"
+            android:textColorHint="@color/Black"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@+id/MininDepot"
+            app:layout_constraintEnd_toEndOf="@+id/Team2"
+            app:layout_constraintStart_toStartOf="@+id/Team2"
+            app:layout_constraintTop_toTopOf="@+id/MininDepot" />
+
+        <TableRow
+            android:id="@+id/trMininDepot"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="485dp"
+            android:background="@color/Black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/MininCargo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Minerals in Cargo Hold:"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/trMininDepot" />
+
+        <EditText
+            android:id="@+id/MininCargo1"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Points"
+            android:layout_toRightOf="@+id/Points"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/Enter"
+            android:textColorHint="@color/Black"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@+id/MininCargo"
+            app:layout_constraintEnd_toEndOf="@+id/Team1"
+            app:layout_constraintStart_toStartOf="@+id/Team1"
+            app:layout_constraintTop_toTopOf="@+id/MininCargo" />
+
+        <EditText
+            android:id="@+id/MininCargo2"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Points"
+            android:layout_toRightOf="@+id/Points"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/Enter"
+            android:textColorHint="@color/Black"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@+id/MininCargo"
+            app:layout_constraintEnd_toEndOf="@+id/Team2"
+            app:layout_constraintStart_toStartOf="@+id/Team2"
+            app:layout_constraintTop_toTopOf="@+id/MininCargo" />
+
+        <TableRow
+            android:id="@+id/trMininCargo"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="530dp"
+            android:background="@color/Black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/EndGame"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/Orange"
+            android:gravity="center_horizontal"
+            android:text="@string/endgame"
+            android:textColor="@android:color/white"
+            android:textSize="28dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/trMininCargo" />
+
+        <TableRow
+            android:id="@+id/trEndGame"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="570dp"
+            android:background="@color/Black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/EndGamePos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/EndGamePos"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/trEndGame" />
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/EndGameInputlist"
+            app:layout_constraintBottom_toBottomOf="@+id/EndGamePos"
+            app:layout_constraintEnd_toEndOf="@+id/Team1"
+            app:layout_constraintStart_toStartOf="@+id/Team1"
+            app:layout_constraintTop_toTopOf="@+id/EndGamePos" />
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/EndGameInputlist"
+            app:layout_constraintBottom_toBottomOf="@+id/EndGamePos"
+            app:layout_constraintEnd_toEndOf="@+id/Team2"
+            app:layout_constraintStart_toStartOf="@+id/Team2"
+            app:layout_constraintTop_toTopOf="@+id/EndGamePos" />
+
+        <TableRow
+            android:id="@+id/trEndGamePos"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="615dp"
+            android:background="@color/Black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 
