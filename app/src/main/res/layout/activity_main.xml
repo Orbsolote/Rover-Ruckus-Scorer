@@ -53,6 +53,7 @@
         android:layout_weight="1"
         android:adjustViewBounds="true"
         android:background="@android:color/white"
+        android:onClick="openScores"
         android:text="@string/Scores"
         android:textColor="@color/Black"
         android:textSize="30sp"
